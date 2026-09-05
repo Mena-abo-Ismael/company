@@ -1,0 +1,51 @@
+﻿@* @Model *@
+@model List<Employee>
+
+<h1>get all Employees view</h1>
+
+@* <p>@((int)ViewData["Temp"]+10)</p> *@
+<p>@(ViewBag.Temp + 10)</p>
+
+@* <p>@(int.Parse(ViewData["Temp"].ToString())+10)</p> *@
+
+<p style="color:@ViewData["Color"]">@ViewData["Msg"]</p>
+
+@{
+    List<string>? branches = ViewData["branches"] as List<string> ?? new();
+}
+
+<select class="form-control">
+    @foreach(var item in  branches)
+    {
+        <option>@item</option>
+    }
+</select>
+
+<br/>
+
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>DepartmentId</th>
+        <th>Address</th>
+    </tr>
+
+    @foreach (var employee in @Model)
+    {
+        <tr>
+            <td>@employee.EId</td>
+            <td>@employee.Name</td>
+            <td>@employee.Salary</td>
+            <td>@employee.Department.Name</td>
+            <td>@employee.Address</td>
+        </tr>
+    }
+</table>
+
+// <p>test1</p>
+// <p>@(int.Parse(ViewBag.Msg) + 10)</p> 
+// <p>test2</p>
+

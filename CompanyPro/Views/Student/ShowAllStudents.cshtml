@@ -1,4 +1,5 @@
 ﻿@* @Model *@
+@model List<Student>
 
 <h1>get all students view</h1>
 
@@ -12,7 +13,7 @@
         <th>Image</th>
     </tr>
 
-    @foreach (Student student in @Model)
+    @foreach (var student in @Model)
     {
         <tr>
             <td>@student.Id</td>

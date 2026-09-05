@@ -16,7 +16,34 @@ namespace CompanyPro.Controllers
         {
             StudentRepository studentRepository = new();
             var studentsModel = studentRepository.GetStudentById(id);
-            return View("ShowAllStudents", studentsModel);
+            return View("ShowStudentDetails", studentsModel);
         }
+        
+        //public IActionResult Action1(int id)
+        //{
+        //    var result = new ViewResult();
+        //    result.ViewName = "abc";
+        //    return result;
+
+        //}
+        
+        //public IActionResult Action2(int id)
+        //{
+        //    var result = new ViewResult();
+        //    result.ViewName = "abc";
+        //    return result;
+        //}
+        
+        //public IActionResult Action3(int id)
+        //{
+        //    return CreateView("test");
+        //}
+
+        //private ViewResult CreateView(string viewName)
+        //{
+        //    var result = new ViewResult();
+        //    result.ViewName = viewName;
+        //    return result;
+        //}
     }
 }
