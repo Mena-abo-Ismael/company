@@ -16,6 +16,10 @@ namespace CompanyPro.AutoMapper
                 //.ForMember(dest => dest.Salary, op => op.MapFrom(src => src.Salary))
                 .ReverseMap();
 
+            CreateMap<Department, GetAllDepartmentsViewModel>()
+                .ForMember(dest=>dest.DepartmentName, opt=>opt.MapFrom(src=>src.Name))
+                .ForMember(dest=>dest.DepartmentLocation, opt=>opt.MapFrom(src=>src.Location))
+                .ReverseMap();
         }
     }
 }

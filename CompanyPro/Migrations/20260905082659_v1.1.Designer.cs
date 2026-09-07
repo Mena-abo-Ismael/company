@@ -24,7 +24,7 @@ namespace CompanyPro.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CompanyPro.Models.Department", b =>
+            modelBuilder.Entity("CompanyPro.Models.DepartmentController", b =>
                 {
                     b.Property<int>("Did")
                         .ValueGeneratedOnAdd()
@@ -124,16 +124,16 @@ namespace CompanyPro.Migrations
 
             modelBuilder.Entity("CompanyPro.Models.Employee", b =>
                 {
-                    b.HasOne("CompanyPro.Models.Department", "Department")
+                    b.HasOne("CompanyPro.Models.DepartmentController", "DepartmentController")
                         .WithMany("Employees")
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Department");
+                    b.Navigation("DepartmentController");
                 });
 
-            modelBuilder.Entity("CompanyPro.Models.Department", b =>
+            modelBuilder.Entity("CompanyPro.Models.DepartmentController", b =>
                 {
                     b.Navigation("Employees");
                 });

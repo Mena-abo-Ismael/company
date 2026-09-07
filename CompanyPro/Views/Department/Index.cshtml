@@ -1,0 +1,21 @@
+﻿@model List<GetAllDepartmentsViewModel>
+
+<h1>Get all Departments</h1>
+
+<a class="btn btn-dark m-1" href="/Department/Add">Add New Department</a>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Location</th>
+    </tr>
+
+    @foreach (var department in @Model)
+    {
+        <tr>
+            <td>@department.DepartmentName</td>
+            <td>@department.DepartmentLocation</td>
+        </tr>
+    }
+</table>
+

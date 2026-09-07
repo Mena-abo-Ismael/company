@@ -1,0 +1,13 @@
+﻿@model DepartmentViewModel
+
+<form method="post" action="/Department/SaveNewDepartment" class="form form-control">
+    <label>Department Name</label>
+    <input type="text" name="DepartmentName" value="@Model?.DepartmentName" id="DepartmentName" class="form form-control" />
+    
+    <label>Department Location</label>
+    <input type="text" name="DepartmentLocation" value="@Model?.DepartmentLocation" id="DepartmentLocation" class="form form-control" />
+
+    <input type="submit" value="Create" class="btn btn-success"/>
+</form>
+
+<a href="/Department/Index">Back to List</a>
