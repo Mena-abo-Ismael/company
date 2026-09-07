@@ -1,0 +1,23 @@
+{
+   // some codes
+   departmentWithNames.id=department.id;
+   departmentWithNames.Name=department.Name;
+   departmentWithNames.location=department.Location;
+   departmentWithNames.deptsVM=context.Departments.select(d=>new {d.id, d.name}).tolist();
+
+   return View("Save", departmentWithNames);
+}
+
+class DepartmentWithNames{
+    id, name, location, manager, list<DeptVM> deptsVm
+}
+
+class deptVM{
+   id, name
+}
+
+<select  >
+     @foreach(var d in Model.deptsVM){
+         <option value="@d.Id">@d.name</option>
+     }
+</select>
